@@ -1,4 +1,4 @@
-print("Hello! My name is DICT_Bot.")
+print("Hello! My name is Karina.")
 print("I was created in 2023.")
 user_name = input("Please, remind me your name.\n")
 print(f"What a great name you have, {user_name}!")
@@ -14,3 +14,18 @@ number = int(input(" "))
 for i in range(number + 1):
     print(f"{i} !")
 print("Completed, have a nice day!")
+print("Let's test your programming knowledge.")
+print("Why do we use methods?")
+print("1. To repeat a statement multiple times.")
+print("2. To decompose a program into several small subroutines.")
+print("3. To determine the execution time of a program.")
+print("4. To interrupt the execution of a program.")
+correct_answer = "2"
+while True:
+    user_answer = input(" ")
+    if user_answer == correct_answer:
+        print("Congratulations, have a nice day!")
+        break
+    else:
+        print("Please, try again.")
+
