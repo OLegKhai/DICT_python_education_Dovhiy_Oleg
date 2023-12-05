@@ -1,8 +1,10 @@
 import random
 
+
 def display_welcome():
     print("HANGMAN")
     print("The game will be available soon.")
+
 
 def display_word(word, guessed_letters):
     display = ''
@@ -12,6 +14,7 @@ def display_word(word, guessed_letters):
         else:
             display += '-'
     print(display)
+
 
 def play_hangman():
     words_list = ['python', 'java', 'javascript', 'php']
@@ -38,26 +41,24 @@ def play_hangman():
 
             if letter not in secret_word:
                 print("That letter doesn't appear in the word")
-            else:
-                print("No improvements")
+
 
             display_word(secret_word, guessed_letters)
 
             if all(letter in guessed_letters for letter in secret_word):
                 print(f"You guessed the word {secret_word}!")
                 print("You survived!")
-                break
+                return
 
             attempts_left -= 1
 
         if attempts_left == 0:
             print("You lost!")
+            print("Thanks for playing!")
+            return
 
-        play_again = input("Type \"play\" to play again, \"exit\" to quit: ").lower()
-        if play_again != "play":
-            break
 
-while True:
+def start_game():
     print("Type \"play\" to play the game, \"exit\" to quit: ", end="")
     choice = input("> ")
 
@@ -65,6 +66,11 @@ while True:
         display_welcome()
         play_hangman()
     elif choice.lower() == "exit":
-        break
+        return False
     else:
         print("Invalid choice. Please enter \"play\" or \"exit\".")
+    return True
+
+
+while start_game():
+    pass
